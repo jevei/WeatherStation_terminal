@@ -58,11 +58,11 @@ namespace WeatherApp.ViewModels
         /// <summary>
         /// TODO 02 : Ajouter ImportCommand
         /// </summary>
-        public DelegateCommand<object> ImportCommand { get; set; }
+        public DelegateCommand<string> ImportCommand { get; set; }
         /// <summary>
         /// TODO 02 : Ajouter ExportCommand
         /// </summary>
-        public DelegateCommand<object> ExportCommand { get; set; }
+        public DelegateCommand<string> ExportCommand { get; set; }
         /// <summary>
         /// TODO 13a : Ajouter ChangeLanguageCommand
         /// </summary>
@@ -86,7 +86,7 @@ namespace WeatherApp.ViewModels
             /// Ne peut s'exécuter que la méthode CanExport retourne vrai
 
             /// TODO 03 : Instancier ImportCommand qui doit appeler la méthode Import
-
+            ImportCommand = new DelegateCommand<string>(Import);
             /// TODO 13b : Instancier ChangeLanguageCommand qui doit appeler la méthode ChangeLanguage
 
             initViewModels();          
