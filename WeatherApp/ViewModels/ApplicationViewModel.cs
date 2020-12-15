@@ -201,7 +201,15 @@ namespace WeatherApp.ViewModels
             /// Sérialiser la collection de températures
             /// Écrire dans le fichier
             /// Fermer le fichier           
-
+            using (var tw = new StreamWriter(Filename, false))
+            {
+                var resultat = JsonConvert.SerializeObject(((ViewModels.Find(x => x.Name == "TemperatureViewModel")) as TemperatureViewModel).Temperatures, Formatting.Indented);
+                Console.WriteLine(resultat);
+                Console.WriteLine("Appuyez sur une touche.");
+                Console.ReadLine();
+                tw.WriteLine(Filename);
+                tw.Close();
+            }
         }
 
         private void openFromFile()
@@ -222,9 +230,8 @@ namespace WeatherApp.ViewModels
             using (StreamReader sr = File.OpenText(Filename))
             {
                 var fileContent = sr.ReadToEnd();
-
                 TemperatureViewModel t = JsonConvert.DeserializeObject<TemperatureViewModel>(fileContent);
-
+                ((ViewModels.Find(x => x.Name == "TemperatureViewModel")) as TemperatureViewModel).Temperatures = t.Temperatures;
                 Console.WriteLine($"***** Contenu de {Filename} *****");
                 Console.WriteLine(fileContent);
                 Console.WriteLine($"***** {nameof(TemperatureViewModel)}.toString() *****");
