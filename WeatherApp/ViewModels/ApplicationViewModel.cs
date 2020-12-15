@@ -180,7 +180,11 @@ namespace WeatherApp.ViewModels
             ///   Garder le nom du fichier dans Filename
             ///   Appeler la méthode saveToFile
             ///   
-
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                Filename = saveFileDialog.FileName;
+                saveToFile();
+            }
         }
 
         private void saveToFile()
