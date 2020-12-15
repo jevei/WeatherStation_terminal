@@ -104,7 +104,10 @@ namespace WeatherApp.ViewModels
                 /// dernière température insérée dans la liste est différente
                 /// que celle que l'on vient de récupérer.
                 /// Utiliser la méthode Insert de la collection
-
+                if (CurrentTemp.City != Temperatures[0].City && CurrentTemp.DateTime != Temperatures[0].DateTime)
+                {
+                    Temperatures.Insert(0, CurrentTemp);
+                }
                 Debug.WriteLine(CurrentTemp);
             }
         }

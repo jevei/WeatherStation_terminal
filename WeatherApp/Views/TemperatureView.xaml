@@ -15,7 +15,25 @@
         <Button DockPanel.Dock="Top" Content="Get Data" Command="{Binding GetTempCommand}"/>
         <!-- TODO 01b : Ajouter la ListView qui est liée avec la collection de Temperatures -->
         <!-- Voir la solution 14_pratique_examen, projet : demo_listView -->
-        <ListView/>
-
+        <ListView ItemsSource="{Binding Temperatures}" SelectedItem="{Binding CurrentTemp}">
+            <ListView.ItemTemplate>
+                <DataTemplate DataType="{x:Type models:TemperatureModel}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Ville : "/>
+                            <TextBlock Text="{Binding City,UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Date et heure : "/>
+                            <TextBlock Text="{Binding DateTime,UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Température(C) : "/>
+                            <TextBlock Text="{Binding Temperature,UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </DockPanel>
 </UserControl>
