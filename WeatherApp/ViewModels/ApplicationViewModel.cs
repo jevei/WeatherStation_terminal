@@ -232,7 +232,11 @@ namespace WeatherApp.ViewModels
             /// Si la réponse de la boîte de dialogue est vraie
             ///   Garder le nom du fichier dans Filename
             ///   Appeler la méthode openFromFile
-
+            if (openFileDialog.ShowDialog() == true)
+            {
+                Filename = openFileDialog.FileName;
+                openFromFile();
+            }
         }
 
         private void ChangeLanguage (string language)
