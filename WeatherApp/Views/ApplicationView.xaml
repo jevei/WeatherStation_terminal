@@ -32,6 +32,10 @@
                 <!-- TODO 10 : Ajouter Importer et exporter -->
                 <MenuItem Header="{x:Static p:Resources.mi_import}" Command="{Binding ImportCommand}"/>
                 <MenuItem Header="{x:Static p:Resources.mi_export}" Command="{Binding ExportCommand}"/>
+                <Separator />
+                <!-- TODO 10 : Ajouter Importer et exporter -->
+                <MenuItem Header="Français" Command="{Binding ChangeLanguageCommand}" CommandParameter="fr"/>
+                <MenuItem Header="English" Command="{Binding ChangeLanguageCommand}" CommandParameter="en"/>
             </MenuItem>
         </Menu>
         <ContentControl Content="{Binding CurrentViewModel}"/>
