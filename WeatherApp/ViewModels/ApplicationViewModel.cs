@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using WeatherApp.Commands;
 using WeatherApp.Services;
+using WeatherApp.ViewModels;
 
 namespace WeatherApp.ViewModels
 {
@@ -151,7 +152,8 @@ namespace WeatherApp.ViewModels
         /// <returns></returns>
         private bool CanExport(string obj)
         {
-            throw new NotImplementedException();
+            var tempTVM = (ViewModels.Find(x => x.Name == "TemperatureViewModel")) as TemperatureViewModel;
+            return tempTVM.Temperatures != null;
         }
 
         /// <summary>
