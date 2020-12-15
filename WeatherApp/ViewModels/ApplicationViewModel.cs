@@ -3,8 +3,10 @@ using Ookii.Dialogs.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Windows;
 using WeatherApp.Commands;
 using WeatherApp.Models;
 using WeatherApp.Services;
@@ -70,6 +72,7 @@ namespace WeatherApp.ViewModels
         public DelegateCommand<string> ExportCommand { get; set; }
         /// <summary>
         /// TODO 13a : Ajouter ChangeLanguageCommand
+        public DelegateCommand<string> ChangeLangCommand { get; set; }
         /// </summary>
 
 
@@ -93,7 +96,7 @@ namespace WeatherApp.ViewModels
             /// TODO 03 : Instancier ImportCommand qui doit appeler la méthode Import
             ImportCommand = new DelegateCommand<string>(Import);
             /// TODO 13b : Instancier ChangeLanguageCommand qui doit appeler la méthode ChangeLanguage
-
+            ImportCommand = new DelegateCommand<string>(ChangeLanguage);
             initViewModels();          
 
             CurrentViewModel = ViewModels[0];
@@ -273,6 +276,21 @@ namespace WeatherApp.ViewModels
             /// TODO 13c : Compléter la méthode pour permettre de changer la langue
             /// Ne pas oublier de demander à l'utilisateur de redémarrer l'application
             /// Aide : ApiConsumerDemo
+            Properties.Settings.Default.Language = language;
+            Properties.Settings.Default.Save();
+
+
+            if (MessageBox.Show("Please restart app for the settings to take effect.\nWould you like to restart?", "Warning!", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                Restart();
+            }
+        }
+        void Restart()
+        {
+            var filename = Application.ResourceAssembly.Location;
+            var newFile = Path.ChangeExtension(filename, ".exe");
+            Process.Start(newFile);
+            Application.Current.Shutdown();
         }
 
         #endregion

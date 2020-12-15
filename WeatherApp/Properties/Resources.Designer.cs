@@ -22,7 +22,7 @@ namespace WeatherApp.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace WeatherApp.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WeatherApp.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace WeatherApp.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Get Data.
         /// </summary>
-        internal static string btn_getData {
+        public static string btn_getData {
             get {
                 return ResourceManager.GetString("btn_getData", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
-        internal static string btn_save {
+        public static string btn_save {
             get {
                 return ResourceManager.GetString("btn_save", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] fog_foggy_weather_icon_1320196634851598977_128 {
+        public static byte[] fog_foggy_weather_icon_1320196634851598977_128 {
             get {
                 object obj = ResourceManager.GetObject("fog_foggy_weather_icon_1320196634851598977_128", resourceCulture);
                 return ((byte[])(obj));
@@ -91,7 +91,7 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to API key :.
         /// </summary>
-        internal static string lbl_apiKey {
+        public static string lbl_apiKey {
             get {
                 return ResourceManager.GetString("lbl_apiKey", resourceCulture);
             }
@@ -100,7 +100,7 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to City :.
         /// </summary>
-        internal static string lbl_city {
+        public static string lbl_city {
             get {
                 return ResourceManager.GetString("lbl_city", resourceCulture);
             }
@@ -109,7 +109,7 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Date and time :.
         /// </summary>
-        internal static string lbl_dataTime {
+        public static string lbl_dataTime {
             get {
                 return ResourceManager.GetString("lbl_dataTime", resourceCulture);
             }
@@ -118,7 +118,7 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Temperature (°C) :.
         /// </summary>
-        internal static string lbl_temperature {
+        public static string lbl_temperature {
             get {
                 return ResourceManager.GetString("lbl_temperature", resourceCulture);
             }
@@ -127,7 +127,7 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Export....
         /// </summary>
-        internal static string mi_export {
+        public static string mi_export {
             get {
                 return ResourceManager.GetString("mi_export", resourceCulture);
             }
@@ -136,7 +136,7 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to File.
         /// </summary>
-        internal static string mi_file {
+        public static string mi_file {
             get {
                 return ResourceManager.GetString("mi_file", resourceCulture);
             }
@@ -145,7 +145,7 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Import....
         /// </summary>
-        internal static string mi_import {
+        public static string mi_import {
             get {
                 return ResourceManager.GetString("mi_import", resourceCulture);
             }
@@ -154,7 +154,7 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
-        internal static string mi_language {
+        public static string mi_language {
             get {
                 return ResourceManager.GetString("mi_language", resourceCulture);
             }
@@ -163,7 +163,7 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Preferences....
         /// </summary>
-        internal static string mi_preferences {
+        public static string mi_preferences {
             get {
                 return ResourceManager.GetString("mi_preferences", resourceCulture);
             }
@@ -173,7 +173,7 @@ namespace WeatherApp.Properties {
         ///   Looks up a localized string similar to Please restart app for the settings to take effect.
         ///Would you like to restart?.
         /// </summary>
-        internal static string msg_restart {
+        public static string msg_restart {
             get {
                 return ResourceManager.GetString("msg_restart", resourceCulture);
             }
@@ -182,7 +182,7 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to My weather station.
         /// </summary>
-        internal static string wn_title {
+        public static string wn_title {
             get {
                 return ResourceManager.GetString("wn_title", resourceCulture);
             }
@@ -191,7 +191,7 @@ namespace WeatherApp.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Warning!.
         /// </summary>
-        internal static string wn_warning {
+        public static string wn_warning {
             get {
                 return ResourceManager.GetString("wn_warning", resourceCulture);
             }
