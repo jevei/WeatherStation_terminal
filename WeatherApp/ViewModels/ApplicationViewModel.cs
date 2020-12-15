@@ -1,6 +1,8 @@
-﻿using Ookii.Dialogs.Wpf;
+﻿using Newtonsoft.Json;
+using Ookii.Dialogs.Wpf;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using WeatherApp.Commands;
 using WeatherApp.Services;
@@ -211,7 +213,18 @@ namespace WeatherApp.ViewModels
             /// Lire le contenu du fichier
             /// Désérialiser dans un liste de TemperatureModel
             /// Remplacer le contenu de la collection de Temperatures avec la nouvelle liste
+            using (StreamReader sr = File.OpenText(Filename))
+            {
+                var fileContent = sr.ReadToEnd();
 
+                TemperatureViewModel t = JsonConvert.DeserializeObject<TemperatureViewModel>(fileContent);
+
+                Console.WriteLine($"***** Contenu de {Filename} *****");
+                Console.WriteLine(fileContent);
+                Console.WriteLine($"***** {nameof(TemperatureViewModel)}.toString() *****");
+                Console.WriteLine(t);
+                Console.ReadLine();
+            }
         }
 
         private void Import(string obj)
