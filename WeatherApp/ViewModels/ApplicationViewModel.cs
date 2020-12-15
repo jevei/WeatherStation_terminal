@@ -86,7 +86,7 @@ namespace WeatherApp.ViewModels
 
             /// TODO 06 : Instancier ExportCommand qui doit appeler la méthode Export
             /// Ne peut s'exécuter que la méthode CanExport retourne vrai
-
+            ExportCommand = new DelegateCommand<string>(Export, CanExport);
             /// TODO 03 : Instancier ImportCommand qui doit appeler la méthode Import
             ImportCommand = new DelegateCommand<string>(Import);
             /// TODO 13b : Instancier ChangeLanguageCommand qui doit appeler la méthode ChangeLanguage
