@@ -2,9 +2,11 @@
 using Ookii.Dialogs.Wpf;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using WeatherApp.Commands;
+using WeatherApp.Models;
 using WeatherApp.Services;
 using WeatherApp.ViewModels;
 
@@ -153,7 +155,7 @@ namespace WeatherApp.ViewModels
         private bool CanExport(string obj)
         {
             var tempTVM = (ViewModels.Find(x => x.Name == "TemperatureViewModel")) as TemperatureViewModel;
-            return tempTVM.Temperatures != null;
+            return tempTVM.Temperatures.Count > 0;
         }
 
         /// <summary>
@@ -207,7 +209,7 @@ namespace WeatherApp.ViewModels
                 Console.WriteLine(resultat);
                 Console.WriteLine("Appuyez sur une touche.");
                 Console.ReadLine();
-                tw.WriteLine(Filename);
+                tw.WriteLine(resultat);
                 tw.Close();
             }
         }
@@ -230,7 +232,8 @@ namespace WeatherApp.ViewModels
             using (StreamReader sr = File.OpenText(Filename))
             {
                 var fileContent = sr.ReadToEnd();
-                TemperatureViewModel t = JsonConvert.DeserializeObject<TemperatureViewModel>(fileContent);
+                TemperatureViewModel t = new TemperatureViewModel();
+                t.Temperatures = JsonConvert.DeserializeObject<ObservableCollection<TemperatureModel>>(fileContent);
                 ((ViewModels.Find(x => x.Name == "TemperatureViewModel")) as TemperatureViewModel).Temperatures = t.Temperatures;
                 Console.WriteLine($"***** Contenu de {Filename} *****");
                 Console.WriteLine(fileContent);
